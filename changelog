@@ -1,20 +1,6 @@
-# Version 0.1 - 23-06-2018
+# Version 0.1 - 24-06-2018
 
 **Agregado**
 
-- Boton para contribuir.
-
-**Modificado**
-
-- Se organizan las vistas en dos carpetas, por tema y perfil del usuario.
-- subjects.gallery se agregan más imagenes de ejemplo.
-- subjects.news se agregan mas noticias de ejemplo.
-
-# Version 0.2 - 23-06-2018
-
-**Agregado**
-- Me gusta y comentarios en los article about, news, proposals. 
-
-**Modificado**
-- Navbar, se agrega el login.
-- Estilos css, para h1 de los temas.
+- Se agrego la aplicación "foro".
+- Se han agregado los modelos UsuarioForo, Tema, Noticia, PropuestaSolucion, y Comentario.
