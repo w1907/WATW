@@ -4,3 +4,14 @@
 
 - Se agrego la aplicación "foro".
 - Se han agregado los modelos UsuarioForo, Tema, Noticia, PropuestaSolucion, y Comentario.
+
+# Version 0.2 - 25-06-2018
+
+**Agregado**
+- App core.
+- Template core.base.html
+- Template core.index.html
+- Archivos estaticos en la app core.
+
+**Modificado**
+- App foro, se agrega una vista (foro.index) de ejemplo para probar el template.
