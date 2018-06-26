@@ -3,20 +3,21 @@
 {% block content %}
 
     {% for topic in object_list %}
+
         <div class="row featurette">
-            <div class="col-md-7">
+            <div class="col-md-7 {% if topic.id|divisibleby:2 %}order-md-2{% endif %}">
                 <h2 class="featurette-heading">{{ topic.titulo }}</h2>
                 <p class="lead">
-                    {{ topic.contenido }}
+                    {{ topic.contenido|truncatewords:36 }}
                     <br>
                     <a class="btn btn-primary btn-sm" href="{% url 'topic.detail' topic.id %}">Leer más...</a>
                 </p>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="https://picsum.photos/500/200/?random=1" alt="We are the world">
+            <div class="col-md-5 {% if topic.id|divisibleby:2 %}order-md-1{% endif %}">
+                <div class="topic-list" style="background-image: url('{{topic.imagen.url}}')"></div>
             </div>
         </div>
-        
+
         <hr class="featurette-divider">
     {% endfor %}
 

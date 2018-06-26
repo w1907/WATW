@@ -13,7 +13,9 @@
                         {{new.titulo}}
                     </div>
                     <div class="card-body">
-                        {{new.contenido}}
+                        {{new.contenido|truncatewords:120}}
+                        <br>
+                        <a href="{% url 'news.detail' topic.id new.id %}">Leer más...</a>
                     </div>
                     <div class="card-footer">
                         <div class="row">

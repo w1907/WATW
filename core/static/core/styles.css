@@ -39,6 +39,22 @@ body{
     background-position: center;
 }
 
+.topic-featured {
+    height: 140px;
+    width: 140px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.topic-list{
+    height: 200px;
+    max-width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .sub-menu {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -66,7 +82,7 @@ body{
     flex-wrap: nowrap;
   }
   
-  
+
   .nav-item {
     flex: 0 0 auto;
   }

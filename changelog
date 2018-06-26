@@ -46,3 +46,14 @@
 - Se modificó views.py en la app “foro_login” para agregar la función de registro.
 - Se modificó settings.py en la app “main” para agregar mensajes de errores en proceso de login y registro.
 - Se modificó Template login/login.html para reubicar los mensajes de error en la parte superior.
+
+# Version 0.3.3 - 26-06-2018
+
+**Agregado**
+- App news, para manejar las noticias.
+- news.views.detail para ver una noticia específica.
+
+**Modificado**
+- core.templates.index, se aplica **truncatechars** para limitar la cantidad de caracteres de los temas destacados.
+- foro.templates.topic_news, se aplica **truncatewords** para limitar la cantidad de palabras que contiene cada noticia.
+- core.views.index, limita la cantiad de objetos en la consulta.
