@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <form method="POST">{% csrf_token %}
+            <table>
+                {{ form.as_table }}
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-primary btn-block">Registrarse</button></td>
+                </tr>
+            </table>
+          </form>
+        </div> 
+     </div>   
+{% endblock %}

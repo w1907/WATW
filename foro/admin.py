@@ -3,9 +3,11 @@ from .models import UsuarioForo, Tema, Noticia, PropuestaSolucion, Comentario
 
 # Register your models here.
 
+'''
 @admin.register(UsuarioForo)
 class UsuarioForoAdmin(admin.ModelAdmin):
 	list_display=('nombre','nombre_usuario','pais','email',)
+'''
 
 
 @admin.register(Tema)
