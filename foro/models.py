@@ -1,13 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class UsuarioForo(models.Model):
-	nombre_usuario=models.CharField(max_length=45)
-	contrasena=models.CharField(max_length=45)
-	nombre=models.CharField(max_length=45)
-	pais=models.CharField(max_length=45)
-	email=models.EmailField()
+	user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+	nombre_usuario=models.CharField(max_length=45, null=True, blank=True)
+	contrasena=models.CharField(max_length=45, null=True, blank=True)
+	nombre=models.CharField(max_length=45, null=True, blank=True)
+	pais=models.CharField(max_length=45, null=True, blank=True)
+	email=models.EmailField(null=True, blank=True)
 	fecha_creacion=models.DateField(auto_now_add=True)
 
 	def __str__(self):

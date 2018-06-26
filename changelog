@@ -34,3 +34,15 @@
 **Modificado**
 - Modelo foro.models, se agregan atributos fecha_creacion, fecha_actualizacion. Ademas se agrega una relacion inversa en foro.models.noticia.
 
+
+# Version 0.3.2 - 26-06-2018
+
+**Agregado**
+- Se agregó Template registro/registro.html.
+- Se agregó forms.py en la app “foro_login” para sobreescribir la función por defecto de UsercreationForm.
+
+**Modificado**
+- Se modificó la base de datos para usuarios de prueba.
+- Se modificó views.py en la app “foro_login” para agregar la función de registro.
+- Se modificó settings.py en la app “main” para agregar mensajes de errores en proceso de login y registro.
+- Se modificó Template login/login.html para reubicar los mensajes de error en la parte superior.

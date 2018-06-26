@@ -3,6 +3,16 @@
 {% block content %}
 <div class="row justify-content-center">
 	<div class="col-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
 		<form method="POST">{% csrf_token %}
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email</label>
@@ -16,16 +26,6 @@
             	<input type="checkbox" class="form-check-input" id="exampleCheck1">
             	<label class="form-check-label" for="exampleCheck1">Recordar</label>
             </div>
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-            	{{ message }}
-            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            		<span aria-hidden="true">&times;</span>
-            	</button>
-            </div>
-            {% endfor %}
-            {% endif %}
             <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
           </form>
         </div> 
