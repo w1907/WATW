@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+    {% for topic in object_list %}
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">{{ topic.titulo }}</h2>
+                <p class="lead">
+                    {{ topic.contenido }}
+                    <br>
+                    <a class="btn btn-primary btn-sm" href="{% url 'topic.detail' topic.id %}">Leer más...</a>
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" src="https://picsum.photos/500/200/?random=1" alt="We are the world">
+            </div>
+        </div>
+        
+        <hr class="featurette-divider">
+    {% endfor %}
+
+{% endblock %}
+
+{% if is_paginated %}
+{% block pagination %}
+
+    <!-- pagination -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        {% if object_list.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ object_list.previous_page_number }}">Anterior</a>
+                        </li>
+                        {% endif %}
+
+                        {% for page in object_list.paginator.page_range %}
+
+                            {% if object_list.number == page %}
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    {{page}}
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                            {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        {% if object_list.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ object_list.next_page_number }}">Siguiente</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- endpagination -->
+    {% endblock %}
+    {% endif %}

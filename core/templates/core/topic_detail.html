@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+
+{% block slide %}
+<!-- SlideAndMenu-->
+<div class="container mb-3 mt-3">
+    <div class="row">
+        <!-- slide -->
+        <div class="col-12 d-flex topic-image" style="background-image: url('{{ topic.imagen.url }}')">
+            <span class="bottom-right"><a class="btn btn-primary rounded-circle love-button" href="#" role="button"><i class="fas fa-hand-holding-heart"></i></a></span>
+            <div class="align-self-center mx-auto">
+                <h1>{{topic.titulo}}</h1>
+            </div>
+        </div>
+        <!-- endslide -->
+        <!-- SubMenu-->
+        <div class="col-12 d-flex container-fluid sub-menu">
+            <header class="align-self-center scroll">
+                <nav class="flex">
+                    <span class="nav-item"><a href="{% url 'topic.detail' topic.id %}">Acerca de</a></span>
+                    <span class="nav-item"><a href="{% url 'topic.news' topic.id %}">Noticias</a></span>
+                    <span class="nav-item"><a href="proposals.html">Propuestas</a></span>
+                    <span class="nav-item"><a href="gallery.html">Galería</a></span>
+                </nav>
+            </header>
+        </div>
+        <!-- endsubmenu -->
+    </div>
+</div>
+<!-- endsubslideandmenu -->
+{% endblock %}

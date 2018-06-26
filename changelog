@@ -15,3 +15,11 @@
 
 **Modificado**
 - App foro, se agrega una vista (foro.index) de ejemplo para probar el template.
+
+# Version 0.3.1 - 26-06-2018
+
+**Agregado**
+- Templates foro.topic_detail, foro.topic_list, foro.topic_news (incompletos).
+
+**Modificado**
+- Modelo foro.models, se agregan atributos fecha_creacion, fecha_actualizacion. Ademas se agrega una relacion inversa en foro.models.noticia.
