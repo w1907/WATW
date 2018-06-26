@@ -16,6 +16,16 @@
 **Modificado**
 - App foro, se agrega una vista (foro.index) de ejemplo para probar el template.
 
+# Version 0.3 - 25-06-2018
+
+**Agregado**
+- Se agregó el branch “sys_login”.
+- Se agregó la aplicación “foro_login”.
+- Se agregó Template login/login.html.
+
+**Modificado**
+- Se modificó el archivo core/templates/core/base.html
+
 # Version 0.3.1 - 26-06-2018
 
 **Agregado**
@@ -23,3 +33,4 @@
 
 **Modificado**
 - Modelo foro.models, se agregan atributos fecha_creacion, fecha_actualizacion. Ademas se agrega una relacion inversa en foro.models.noticia.
+

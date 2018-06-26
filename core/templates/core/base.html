@@ -26,9 +26,15 @@
                     <a class="nav-item nav-link {% if request.path == '/topic' %}active{% endif %}" href="{% url 'topic.index' %}">Temas</a>
                     <a class="nav-item nav-link" href="#">Contacto</a>
                 </div>
+                {% if user.is_active %}
                 <span class="navbar-text">
-                    <a href="login.html">Iniciar sesión</a>
+                    <a href="{% url 'logout_foro' %}">Cerrar sesión</a>
                 </span>
+                {% else %}
+                <span class="navbar-text">
+                    <a href="{% url 'login_foro' %}">Iniciar sesión</a>
+                </span>
+                {% endif %}
             </div>
         </div>
     </nav>
