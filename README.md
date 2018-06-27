@@ -10,19 +10,19 @@
 
  1. Crear un entorno virtual.
 
-    *virtualenv -p python3 <nombre>*
+    *virtualenv -p python3 WATW*
 
- 2. Crear carpeta dentro del entorno virtual creado.
+ 2. Crear carpeta **src** dentro del entorno virtual creado.
 
     *mkdir src*
 
- 3. Clonar el repositorio dentro de la carpeta src.
+ 3. Clonar el repositorio dentro de la carpeta **src**.
  
     *git clone https://github.com/w1907/WATW.git .*
     
- 4. Activar entorno virtal.
+ 4. Activar entorno virtual.
 
-    *source bin/activa*
+    *source bin/activate*
 
  5. Instalar los paquetes necesarios para desplegar la app.
 
