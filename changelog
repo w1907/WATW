@@ -76,3 +76,12 @@
 
 **Modificado**
 - Se modificó views.py en "foro" para agregar funcionalidad al agregar temas.
+
+
+# Version 0.3.6 - 26-06-2018
+
+**Agregado**
+- Se agregó Template topic_edit.html, topic_delete.html
+
+**Modificado**
+- Se modificó views.py en "foro" para agregar funcionalidad al editar y eliminar temas.

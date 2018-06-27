@@ -6,7 +6,11 @@
 
         <div class="row featurette">
             <div class="col-md-7 {% if topic.id|divisibleby:2 %}order-md-2{% endif %}">
-                <h2 class="featurette-heading">{{ topic.titulo }}</h2>
+                <div class="row col">
+                    <h2 class="featurette-heading">{{ topic.titulo }}</h2>
+                    <a class="btn btn-primary btn-sm" href="{% url 'edit_topic' topic.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'delete_topic' topic.id %}">Eliminar</a>
+                </div>
                 <p class="lead">
                     {{ topic.contenido|truncatewords:36 }}
                     <br>

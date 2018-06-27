@@ -52,10 +52,30 @@ def news(request, topic_id):
 def add_topic(request):
     template_name = 'foro/topic_add.html'
     if request.method == 'POST':
-        form = AddTopicForm(request.POST)
+        form = AddTopicForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         return HttpResponseRedirect(reverse('topic.index'))
     else:
         form = AddTopicForm()
     return render(request, template_name, {'form':form})
+
+def edit_topic(request, topic_id):
+    template_name = 'foro/topic_add.html'
+    topic = Tema.objects.get(id=topic_id)
+    if request.method == 'GET':
+        form = AddTopicForm(instance=topic)
+    else:
+        form = AddTopicForm(request.POST, request.FILES, instance=topic)
+        if form.is_valid():
+            form.save()
+        return HttpResponseRedirect(reverse('topic.index'))
+    return render(request, template_name, {'form': form})
+
+def delete_topic(request, topic_id):
+    template_name = 'foro/topic_delete.html'
+    topic = Tema.objects.get(id=topic_id)
+    if request.method == 'GET':
+        topic.delete()
+        return HttpResponseRedirect(reverse('topic.index'))
+    return render(request, template_name, {'form': topic})
