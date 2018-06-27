@@ -67,3 +67,12 @@
 
 **Modificado**
 - foro.models.PropuestaSolucion, se agrega una relacion inversa con la clase Tema.
+
+
+# Version 0.3.5 - 26-06-2018
+
+**Agregado**
+- Se agregó Template topic_add.html
+
+**Modificado**
+- Se modificó views.py en "foro" para agregar funcionalidad al agregar temas.

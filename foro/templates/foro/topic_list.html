@@ -21,6 +21,11 @@
         <hr class="featurette-divider">
     {% endfor %}
 
+    <div>
+        <a class="btn btn-primary btn-sm" href="{% url 'add_topic' %}">Agregar Tema</a>
+    </div>
+    <hr class="featurette-divider">
+
 {% endblock %}
 
 {% if is_paginated %}

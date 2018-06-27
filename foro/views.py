@@ -1,7 +1,9 @@
-from django.http import Http404
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import get_object_or_404, render
 from foro.models import Tema
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .forms import AddTopicForm
 
 def index(request):
     data = {}
@@ -46,3 +48,14 @@ def news(request, topic_id):
 
     template_name = 'foro/topic_news.html'
     return render(request, template_name, data)
+
+def add_topic(request):
+    template_name = 'foro/topic_add.html'
+    if request.method == 'POST':
+        form = AddTopicForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return HttpResponseRedirect(reverse('topic.index'))
+    else:
+        form = AddTopicForm()
+    return render(request, template_name, {'form':form})
