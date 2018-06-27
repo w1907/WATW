@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('core.urls'), name="core"),
     path('', include('foro.urls'), name="topic"),
     path('', include('news.urls'), name="news"),
+    path('', include('proposal.urls'), name="proposal"),
     path('auth/', include('foro_login.urls'), name="foro_login")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

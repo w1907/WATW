@@ -1,0 +1,31 @@
+{% extends 'core/topic_detail.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- section -->
+        <section>
+            <!-- article -->
+            <article class="mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        {{proposal.titulo}}
+                    </div>
+                    <div class="card-body">
+                        {{proposal.contenido}}
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-12 col-md-6 author">{{proposal.fecha_creacion|date:"F j, Y"}} por <a href="profile.html">Allison Ossa</a></div>
+                            <div class="col-6 col-md-3 text-center"><a href="#"><i class="far fa-thumbs-up"></i> 15 <span class="d-none d-sm-inline d-md-inline d-lg-inline">Me gusta</span></a></div>
+                            <div class="col-6 col-md-3 text-center"><a href="comments.html"><i class="far fa-comment-dots"></i> 3 <span class="d-none d-sm-inline d-md-inline d-lg-inline">Comentarios</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- endarticle -->
+        </section>
+        <!-- endsection -->
+    </div>
+</div>
+{% endblock %}

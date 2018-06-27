@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'core',
     'foro',
     'news',
+    'proposal',
     'foro_login',
 ]
 

@@ -57,3 +57,13 @@
 - core.templates.index, se aplica **truncatechars** para limitar la cantidad de caracteres de los temas destacados.
 - foro.templates.topic_news, se aplica **truncatewords** para limitar la cantidad de palabras que contiene cada noticia.
 - core.views.index, limita la cantiad de objetos en la consulta.
+
+
+# Version 0.3.4 - 26-06-2018
+
+**Agregado**
+- App proposal, gestiona las propuestas.
+- proposal.templates.proposal_list, muestra todas las noticias relacionadas con un tema.
+
+**Modificado**
+- foro.models.PropuestaSolucion, se agrega una relacion inversa con la clase Tema.

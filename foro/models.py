@@ -48,7 +48,7 @@ class PropuestaSolucion(models.Model):
 	total_comentarios=models.PositiveIntegerField(null=True,blank=True)
 	fecha_creacion=models.DateField(auto_now_add=True)
 	usuario=models.OneToOneField(UsuarioForo,null=True,blank=True,on_delete=models.CASCADE)
-	tema=models.OneToOneField(Tema,null=True,blank=True,on_delete=models.CASCADE)
+	tema=models.ForeignKey(Tema,null=True,blank=True,on_delete=models.CASCADE, related_name="get_proposals")
 
 	def __str__(self):
 		return self.titulo

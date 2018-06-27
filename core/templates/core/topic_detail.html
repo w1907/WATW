@@ -19,7 +19,7 @@
                 <nav class="flex">
                     <span class="nav-item"><a href="{% url 'topic.detail' topic.id %}">Acerca de</a></span>
                     <span class="nav-item"><a href="{% url 'topic.news' topic.id %}">Noticias</a></span>
-                    <span class="nav-item"><a href="proposals.html">Propuestas</a></span>
+                    <span class="nav-item"><a href="{% url 'proposal.list' topic.id %}">Propuestas</a></span>
                     <span class="nav-item"><a href="gallery.html">Galería</a></span>
                 </nav>
             </header>

@@ -1,0 +1,92 @@
+{% extends 'core/topic_detail.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-md-9">
+        <!-- section -->
+        <section>
+            {% for proposal in object_list %}
+            <!-- article -->
+            <article class="mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        {{proposal.titulo}}
+                    </div>
+                    <div class="card-body">
+                        {{proposal.contenido|truncatewords:120}}
+                        <a href="{% url 'proposal.detail' topic.id proposal.id %}">Leer más...</a>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-12 col-md-6 author">{{proposal.fecha_creacion|date:"F j, Y"}} por <a href="profile.html">Byron Oyarzún</a></div>
+                            <div class="col-6 col-md-3 text-center"><a href="#"><i class="far fa-thumbs-up"></i> 15 <span class="d-none d-sm-inline d-md-inline d-lg-inline">Me gusta</span></a></div>
+                            <div class="col-6 col-md-3 text-center"><a href="comments.html"><i class="far fa-comment-dots"></i> 3 <span class="d-none d-sm-inline d-md-inline d-lg-inline">Comentarios</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- endarticle -->
+            {% endfor %}
+        </section>
+        <!-- endsection -->
+    </div>
+
+    <!-- aside -->
+    <aside class="col-12 col-md-3">
+        <div class="card">
+            <div class="card-header">
+                Title
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere minus quasi doloribus culpa et, ullam, reprehenderit perferendis omnis maxime quo illo assumenda eaque quis, sunt eveniet eius expedita vero molestias.
+                </p>
+            </div>
+        </div>
+    </aside>
+    <!-- endaside -->
+{% endblock %}
+
+{% if is_paginated %}
+{% block pagination %}
+
+    <!-- pagination -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        {% if object_list.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ object_list.previous_page_number }}">Anterior</a>
+                        </li>
+                        {% endif %}
+
+                        {% for page in object_list.paginator.page_range %}
+
+                            {% if object_list.number == page %}
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    {{page}}
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                            {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        {% if object_list.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ object_list.next_page_number }}">Siguiente</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- endpagination -->
+    {% endblock %}
+    {% endif %}
