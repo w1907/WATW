@@ -1,3 +1,4 @@
 /.vscode
 /media
 *.pyc
+db.sqlite3
