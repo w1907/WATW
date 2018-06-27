@@ -10,35 +10,35 @@
 
  1. Crear un entorno virtual.
 
-    virtualenv -p python3 <nombre>
+    *virtualenv -p python3 <nombre>*
 
  2. Crear carpeta dentro del entorno virtual creado.
 
-    mkdir src
+    *mkdir src*
 
  3. Clonar el repositorio dentro de la carpeta src.
  
-    git clone https://github.com/w1907/WATW.git .
+    *git clone https://github.com/w1907/WATW.git .*
     
  4. Activar entorno virtal.
 
-    source bin/activa
+    *source bin/activa*
 
  5. Instalar los paquetes necesarios para desplegar la app.
 
-    pip -r install requirements.txt
+    *pip -r install requirements.txt*
 
  6. Crear la base de datos.
 
-    python manage.py migrate
+    *python manage.py migrate*
 
  7. Crear un super usuario.
 
-    python manage.py createsuperuser
+    *python manage.py createsuperuser*
 
  8. Iniciar servidor.
 
-    python manage.py runserver
+    *python manage.py runserver*
 
 # Descripción
 
